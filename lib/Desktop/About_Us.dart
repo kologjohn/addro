@@ -71,6 +71,9 @@ class History extends StatelessWidget {
             ),
           ],
         ),
+
+        const SizedBox(height: 50)
+
       ],
     );
   }

@@ -78,7 +78,7 @@ class Col3{
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
                    SizedBox(
-                     width: 220, height: 110,
+                     width: 220, height: 130,
                      child: Column(
                       children: <Widget>[
                         TextBtn('').Textbtn(Icons.check, 'Mission Statement',),
@@ -89,7 +89,7 @@ class Col3{
                    ),
 
                    Column(
-                    children: <Widget>[Cont().smlCont('51', 'YEARS', 'OF EXPERIENCE')]
+                    children: [Cont().smlCont('51', 'YEARS', 'OF EXPERIENCE')]
                   ),
                 ],
                ),
@@ -111,7 +111,8 @@ class Col3{
    return Column(
       children: [
         Text(txt, style: GoogleFonts.roboto( color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 16),),
-        Text(txt2, style: GoogleFonts.playfairDisplay( fontSize: 40, fontWeight: FontWeight.bold),),
+        const SizedBox(height: 10),
+        Text(txt2, textAlign: TextAlign.center, style: GoogleFonts.playfairDisplay( fontSize: 40, fontWeight: FontWeight.bold),),
         Text(txt3, style: GoogleFonts.mPlus1(fontSize: 18),)
       ],
     );
@@ -150,7 +151,7 @@ class Col3Cards{
 
   card2 (String img, String txt){
     return SizedBox(
-      height: 600, width: 450,
+      height: 650, width: 450,
       child: Card(
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)

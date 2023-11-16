@@ -1,9 +1,15 @@
+import 'package:ecommerce/Desktop/Blogs.dart';
 import 'package:ecommerce/Desktop/Column-three.dart';
 import 'package:ecommerce/Desktop/Containers.dart';
+import 'package:ecommerce/Desktop/Events.dart';
+import 'package:ecommerce/Desktop/Footer.dart';
 import 'package:ecommerce/Desktop/Header.dart';
 import 'package:ecommerce/Desktop/Sliders.dart';
 import 'package:ecommerce/Desktop/columnFour.dart';
+import 'package:ecommerce/Gallery.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -20,7 +26,7 @@ class DeskTop extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           toolbarHeight: 70,
-          backgroundColor: Colors.white,
+          backgroundColor: CupertinoColors.white,
           title: const Header(),),
         //appBar: AppBar(title: const Text('Ecommerce')),
 
@@ -31,8 +37,13 @@ class DeskTop extends StatelessWidget {
                 children: [
                   Container(
                     decoration:  const BoxDecoration(
-                      color: Colors.black87,
-                      image: DecorationImage(fit: BoxFit.cover, opacity: 0.6, image: AssetImage('assets/33-1.jpg')),
+                      color: CupertinoColors.black,
+                      image: DecorationImage(
+                        filterQuality: FilterQuality.high,
+                          fit: BoxFit.cover,
+                          opacity: 0.5,
+                          image: AssetImage('assets/33-1.jpg')
+                      ),
                     ),
                     child: const Slides(),
                   ),
@@ -50,7 +61,7 @@ class DeskTop extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: Text('Let\'s Make A Difference Today', style: GoogleFonts.playfairDisplay(fontSize: 40, fontWeight: FontWeight.bold)),
                           ),
-                          FinalCards().fCards(),
+                          const RecentProjects(),
                         ],
                       )
                   )
@@ -75,24 +86,56 @@ class DeskTop extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 50),
-              Column(
+              // Column(
+              //   children: [
+              //     Container(
+              //       height: 600,
+              //       decoration: const BoxDecoration(
+              //         color: Colors.black,
+              //           image: DecorationImage(
+              //             filterQuality: FilterQuality.high,
+              //               fit: BoxFit.cover,
+              //               opacity: 0.5,
+              //               image: AssetImage('assets/33-1.jpg')
+              //           )
+              //       ),
+              //       child:  Column(
+              //         children: <Widget>[
+              //           Col4().contactForm(),
+              //         ],
+              //       ),
+              //     ),
+              //   ],
+              // ),
+               Container(
+                 color: Colors.black12,
+                 child: const Column(
+                  children: [
+                    DesktopEvents(),
+                  ],
+                ),
+               ),
+
+              const Column(
                 children: [
-                  Container(
-                    height: 600,
-                    decoration: const BoxDecoration(
-                      color: Colors.black54,
-                        image: DecorationImage( fit: BoxFit.cover, opacity: 0.5,
-                            image: AssetImage('assets/33-1.jpg')
-                        )
-                    ),
-                    child:  Column(
-                      children: <Widget>[
-                        Col4().contactForm(),
-                      ],
-                    ),
-                  ),
+                  SizedBox( height: 100),
+                  Blog(),
+                  SizedBox(height: 150),
+                  GetInvolve()
                 ],
               ),
+              Column(
+                children: <Widget>[
+                  Gallery()
+                ],
+              ),
+              const SizedBox(height: 100),
+              const Column(
+                children: [
+                  Footer()
+                ],
+              ),
+
             ],
           ),
         ),

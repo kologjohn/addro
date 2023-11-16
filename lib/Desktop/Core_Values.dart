@@ -103,6 +103,9 @@ class CoreValues extends StatelessWidget {
             ),
           ],
         ),
+
+        const SizedBox(height: 50)
+
       ],
     );
   }

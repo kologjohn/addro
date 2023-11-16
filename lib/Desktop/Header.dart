@@ -1,11 +1,10 @@
 import 'package:ecommerce/Buttons.dart';
 import 'package:ecommerce/Desktop/About_Us.dart';
 import 'package:ecommerce/Desktop/Core_Values.dart';
-import 'package:ecommerce/Desktop/content.dart';
+import 'package:ecommerce/content.dart';
 import 'package:ecommerce/Desktop/pop_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:hover_menu/hover_menu.dart';
-import 'package:xen_popup_card/xen_popup_card.dart';
 class Header extends StatelessWidget {
   const Header({super.key});
 
@@ -27,15 +26,14 @@ class Header extends StatelessWidget {
                 child: Column(
                   children: [
                     ListTile(
-                      hoverColor: Colors.yellow,
                       onTap: () {
-                        popmodal(context, 'MISSION STATEMENT', Content.mission, 'Close');
+                        vmPopmodal(context, 'MISSION STATEMENT', Content.vision, 'Close');
                       },
                       title: const Text('Mission'),
                     ),
                     ListTile(
                       onTap: () {
-                        popmodal(context,"VISION STATEMENT",Content.mission,"Close");
+                        vmPopmodal(context,"VISION STATEMENT",Content.mission,"Close");
                         },
                       title: const Text('Vision'),
                     ),
@@ -50,6 +48,7 @@ class Header extends StatelessWidget {
                       },
                       title: const Text('Core values'),
                     ),
+
                     ListTile(
                       onTap: () {Navigator.push(
                           context,
@@ -59,10 +58,12 @@ class Header extends StatelessWidget {
                       );},
                       title: const Text('History'),
                     ),
+
                     ListTile(
                       onTap: () {},
                       title: const Text('Reports'),
                     ),
+
                     ListTile(
                       onTap: () {},
                       title: const Text('Staff'),
@@ -74,7 +75,7 @@ class Header extends StatelessWidget {
           ),
 
           HoverMenu(
-              title: Title1('What we do').Titletxt(),
+              title: Title1('Thematic Programs Areas').Titletxt(),
             items: [
               Container(
                 color: Colors.white,
@@ -82,27 +83,31 @@ class Header extends StatelessWidget {
                   children: [
                     ListTile(
                       onTap: () {},
-                      title: const Text('Integrated Early Childhood Development'),
+                      title: const Text('Agriculture and sustainable livelihoods'),
                     ),
                     ListTile(
                       onTap: () {},
-                      title: const Text('Climate Resilience'),
+                      title: const Text('Health'),
                     ),
                     ListTile(
                       onTap: () {},
-                      title: const Text('Economic Development (Savings With Education - SWE)'),
+                      title: const Text('Gender Equity and Social Inclusion (GESI))'),
                     ),
                     ListTile(
                       onTap: () {},
-                      title: const Text('Health Prevention and Outreach Project'),
+                      title: const Text('Environment and Climate Change'),
                     ),
                     ListTile(
                       onTap: () {},
-                      title: const Text('Soya Beans Value Chain'),
+                      title: const Text('Governance and peace building'),
                     ),
                     ListTile(
                       onTap: () {},
-                      title: const Text('Gender Equity and Social Inclusion'),
+                      title: const Text('Disaster and relief'),
+                    ),
+                    ListTile(
+                      onTap: () {},
+                      title: const Text('Education and Capacity development'),
                     ),
                   ],
                 ),
@@ -156,39 +161,82 @@ class Header extends StatelessWidget {
                   children: [
                     ListTile(
                       onTap: () {},
-                      title: const Text('GHS'),
+                      title: const Text('HPIC'),
+                    ),
+
+                    ListTile(
+                      onTap: () {},
+                      title: const Text('SNV (Netherlands)'),
+                    ),
+
+                    ListTile(
+                      onTap: () {},
+                      title: const Text('Episcopal Relief and Development (USA)'),
                     ),
                     ListTile(
                       onTap: () {},
-                      title: const Text('MoFA'),
-                    ),
-                    ListTile(
-                      onTap: () {},
-                      title: const Text('Dep\'t of Social Welfare'),
+                      title: const Text('Comic Relief (UK)'),
                     ),
                   ],
                 ),
               ),
             ],
           ),
+
           HoverMenu(
-              title: Title1('Donors').Titletxt(),
+              title: Title1('Current Programs').Titletxt(),
             items: [
               Container(
                 color: Colors.white,
                 child: Column(
                   children: [
                     ListTile(
-                      onTap: () {},
-                      title: const Text('Episcopal Relief & Development'),
+                      onTap: () {
+                        desktopPopmodal(context, 'Integrated Community Case Management (iCCM)', Programs.a, 'close');
+                      },
+                      title: const Text('ICCM'),
                     ),
+
                     ListTile(
-                      onTap: () {},
-                      title: const Text('Health Partners of Canada'),
+                      onTap: () {
+                        desktopPopmodal(context, 'Early Childhood Development and education (ECD)', Programs.b, 'close');
+                      },
+                      title: const Text('ECD'),
                     ),
+
                     ListTile(
-                      onTap: () {},
-                      title: const Text('SNV/2Scale'),
+                      onTap: () {
+                        desktopPopmodal(context, 'Community-Based Malaria Control Project', Programs.c, 'close');
+                      },
+                      title: const Text('Community-Based Malaria Control Project'),
+                    )
+
+                    ,ListTile(
+                      onTap: () {
+                        desktopPopmodal(context, 'Health Outreach Prevention Education (HOPE)', Programs.d, 'close');
+                      },
+                      title: const Text('HOPE'),
+                    ),
+
+                    ListTile(
+                      onTap: () {
+                        desktopPopmodal(context, 'Northern Ghana Climate Resilience Program (NGCRP)', Programs.e, 'close');
+                      },
+                      title: const Text('NGCRP'),
+                    ),
+
+                    ListTile(
+                      onTap: () {
+                        desktopPopmodal(context, 'ADDRO-SNV Soybean Partnership', Programs.f, 'close');
+                      },
+                      title: const Text('ADDRO-SNV Soybean Partnership'),
+                    ),
+
+                    ListTile(
+                      onTap: () {
+                        desktopPopmodal(context, 'Savings with Education', Programs.g, 'close');
+                      },
+                      title: const Text('Savings with Education'),
                     ),
                   ],
                 ),
@@ -220,7 +268,7 @@ class Header extends StatelessWidget {
             ],
           ),
 
-          Buttons('Donate now').elvatedBtn()
+          DonateBtn('Donate now').elvatedBtn()
         ],
       ),
     );

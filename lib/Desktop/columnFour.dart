@@ -1,3 +1,4 @@
+import 'package:ecommerce/Buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pretty_animated_buttons/configs/pkg_sizes.dart';
@@ -24,10 +25,10 @@ class Col4 {
            padding: const EdgeInsets.all(8.0),
            child: Container(
              decoration:  BoxDecoration(
-               color: Colors.amber[50],
+               color: Colors.amber.withOpacity(0.2),
                borderRadius: const BorderRadius.all(Radius.circular(20))
              ),
-             width: 600,
+             width: 580,
              height: 300,
              child: Row(
                mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +39,9 @@ class Col4 {
                     children:[
                       ConForm().contactForm('Enter your Name*', TextInputType.text),
                       const SizedBox(height: 10),
-                      ConForm().contactForm('Enter your Email*', TextInputType.text)
+                      ConForm().contactForm('Enter your Email*', TextInputType.text),
+                      const SizedBox(height: 10),
+                      Buttons('Send').elvatedBtn()
                     ],
                    ),
                  ),
@@ -70,7 +73,7 @@ class Col4 {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              children: <Widget>[
+              children: [
                 Text(txt, style: GoogleFonts.roboto( color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 20)),
                 const SizedBox(height: 100,),
                 Text(txt2, style: GoogleFonts.playfairDisplay(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold)),

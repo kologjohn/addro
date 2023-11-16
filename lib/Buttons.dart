@@ -1,4 +1,7 @@
-import 'package:ecommerce/Desktop/Column-three.dart';
+import 'package:ecommerce/responsive/desktop_scaffold.dart';
+import 'package:ecommerce/responsive/mobile_scaffold.dart';
+import 'package:ecommerce/responsive/responsive_layout.dart';
+import 'package:ecommerce/responsive/tablet_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,12 +10,12 @@ class Buttons{
 
   Buttons(this.btntxt);
   Widget elvatedBtn(){
-    return Container(
-      height: 50,
+    return SizedBox(
+      height: 40,
       child: ElevatedButton(
           style:  ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.amber),
-            //overlayColor: const MaterialStatePropertyAll(Colors.yellow),
+            backgroundColor: MaterialStatePropertyAll(Colors.amber[700]),
+            overlayColor:  MaterialStatePropertyAll(Colors.yellow.shade900),
             //side: const MaterialStatePropertyAll(BorderSide(color: Colors.black)),
             shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
                   (Set<MaterialState> states) {
@@ -23,7 +26,7 @@ class Buttons{
             ),
           ),
           onPressed: (){},
-          child:  Text('$btntxt', style: GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 20),)
+          child:  Text('$btntxt', style: GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),)
       ),
     );
   }
@@ -34,12 +37,12 @@ class Button2{
 
   Button2(this.btn2txt);
   Widget elvatedBtn(){
-    return Container(
-      height: 50,
+    return SizedBox(
+      height: 40,
       child: ElevatedButton(
           style:  ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.transparent),
-            overlayColor: const MaterialStatePropertyAll(Colors.amber),
+            backgroundColor: const MaterialStatePropertyAll(Colors.transparent),
+            overlayColor:  MaterialStatePropertyAll(Colors.yellow.shade900),
             side: const MaterialStatePropertyAll(BorderSide(color: Colors.white, width: 1)),
             shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
                   (Set<MaterialState> states) {
@@ -50,11 +53,121 @@ class Button2{
             ),
           ),
           onPressed: (){},
-          child:  Text('$btn2txt', style: GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 20),)
+          child:  Text('$btn2txt', style: GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),)
       ),
     );
   }
 }
+
+
+
+class DonateBtn{
+  String? btntxt;
+
+  DonateBtn(this.btntxt);
+  Widget elvatedBtn(){
+    return SizedBox(
+      height: 40,
+      child: ElevatedButton(
+          style:  ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.amber[700]),
+            overlayColor:  MaterialStatePropertyAll(Colors.yellow.shade900),
+            //side: const MaterialStatePropertyAll(BorderSide(color: Colors.black)),
+            shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
+                  (Set<MaterialState> states) {
+                return const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(40))
+                );
+              },
+            ),
+          ),
+          onPressed: (){},
+          child:  Text('$btntxt', style: GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),)
+      ),
+    );
+  }
+}
+
+class BookNow{
+  String? btntxt;
+
+  BookNow(this.btntxt);
+  Widget elvatedBtn(){
+    return SizedBox(
+      height: 40,
+      child: ElevatedButton(
+          style:  ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.amber[700]),
+            overlayColor:  MaterialStatePropertyAll(Colors.yellow.shade900),
+            //side: const MaterialStatePropertyAll(BorderSide(color: Colors.black)),
+            shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
+                  (Set<MaterialState> states) {
+                return const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(40))
+                );
+              },
+            ),
+          ),
+          onPressed: (){},
+          child:  Text('$btntxt', style: GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),)
+      ),
+    );
+  }
+}
+
+class GetInvolveBtn{
+  String? btntxt;
+
+  GetInvolveBtn(this.btntxt);
+  Widget elvatedBtn(){
+    return SizedBox(
+      height: 40,
+      child: ElevatedButton(
+          style:  ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.amber[700]),
+            overlayColor:  MaterialStatePropertyAll(Colors.yellow.shade900),
+            shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
+                  (Set<MaterialState> states) {
+                return const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(40))
+                );
+              },
+            ),
+          ),
+          onPressed: (){},
+          child:  Text('$btntxt', style: GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),)
+      ),
+    );
+  }
+}
+
+class ViewEvents {
+  String? btntxt;
+
+  ViewEvents(this.btntxt);
+  Widget elvatedBtn(){
+    return SizedBox(
+      height: 40,
+      child: ElevatedButton(
+          style:  ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.amber[700]),
+            overlayColor:  MaterialStatePropertyAll(Colors.yellow.shade900),
+            //side: const MaterialStatePropertyAll(BorderSide(color: Colors.black)),
+            shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
+                  (Set<MaterialState> states) {
+                return const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(40))
+                );
+              },
+            ),
+          ),
+          onPressed: (){},
+          child:  Text('$btntxt', style: GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),)
+      ),
+    );
+  }
+}
+
 
 class TextBtn{
   String? txtbtn;
@@ -64,26 +177,18 @@ class TextBtn{
 
   Widget TxtBtn(){
     return TextButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(BuildContext as BuildContext, MaterialPageRoute(builder: (context)=>  const ResponsiveLayout(mobilescaffold: MobileScaffold(),tabletscaffold: TabletScaffold(),desktopscaffold: DesktopScaffold(),)),
+          );
+        },
         child: Text('$txtbtn', style: GoogleFonts.roboto(fontWeight: FontWeight.bold, color: Colors.amber, fontSize: 20))
     );
   }
 
   Textbtn(IconData icon, String text){
-    return TextButton(
-      onPressed: (){},
-      child: Column(
-        children: [
-          Row(
-          children: <Widget>[
-            Icon(icon, color: Colors.amber,),
-            Text(text, style: GoogleFonts.ptSans( color: Colors.black, fontSize: 20),),
-
-          ],
-         ),
-
-        ],
-      ),
+    return TextButton.icon(
+      onPressed: (){}, icon: Icon(icon, color: Colors.amber),
+      label: Text(text, style: GoogleFonts.ptSans( color: Colors.black, fontSize: 20)),
     );
   }
 }
@@ -115,3 +220,4 @@ class Cont {
     );
   }
 }
+

@@ -76,6 +76,7 @@ class SliderItems {
                 ),
               ],
             ),
+
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -94,7 +95,7 @@ class SliderItems {
             children: [
               Row(
                 children: <Widget>[
-                  Buttons('Donate funds').elvatedBtn(),
+                  DonateBtn('Donate funds').elvatedBtn(),
                   const SizedBox(width: 20,),
                   Button2('Read more').elvatedBtn()
                 ],

@@ -45,7 +45,7 @@ class MobileCol3{
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
                    SizedBox(
-                     width: 220, height: 110,
+                     width: 240, height: 110,
                      child: Column(
                       children: <Widget>[
                         TextBtn('').Textbtn(Icons.check, 'Mission Statement',),
