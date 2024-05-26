@@ -51,84 +51,6 @@ class Cards {
   }
 }
 
-class RecentProjects extends StatefulWidget {
-  const RecentProjects({super.key});
-
-  @override
-  State<RecentProjects> createState() => _RecentProjectsState();
-}
-
-class _RecentProjectsState extends State<RecentProjects> {
-  @override
-  Widget build(BuildContext context) {
-    return  SingleChildScrollView(
-      child: Column(
-        children: [
-          Wrap(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Cards(
-                        'assets/health2.svg',
-                        'Thematic Programmes',
-                        'We believe that God’s love, and peace can only be found in a '
-                            'community based upon right relations.').myCards(),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Cards(
-                        'assets/community.svg',
-                        'Integrated Community-Based Health Program',
-                        'ADDRO’s health program was focused mainly on carrying out '
-                            'malaria intervention activities in communities.').myCards(),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Cards(
-                        'assets/arrow.svg',
-                        'Community Development Projects',
-                        'We professionally resource start-ups and boost trending business to '
-                            'continue to meet their market demand.').myCards(),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Cards(
-                        'assets/handshake.svg',
-                        'Collaborative Projects',
-                        'We perform monitoring and business to keep them alive and in track.').myCards(),
-                  ],
-                ),
-              )
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
-
-
-
-
-
 
 class FinalCards{
 
@@ -138,7 +60,73 @@ class FinalCards{
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 650, width: 270,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Cards(
+                      'assets/health2.svg',
+                      'Thematic Programmes',
+                      'We believe that God’s love, and peace can only be found in a '
+                          'community based upon right relations.').myCards(),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 650, width: 270,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Cards(
+                      'assets/community.svg',
+                      'Integrated Community-Based Health Program',
+                      'ADDRO’s health program was focused mainly on carrying out '
+                          'malaria intervention activities in communities.').myCards(),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 650, width: 270,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Cards(
+                      'assets/arrow.svg',
+                      'Community Development Projects',
+                      'We professionally resource start-ups and boost trending business to '
+                          'continue to meet their market demand.').myCards(),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 650, width: 270,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Cards(
+                      'assets/handshake.svg',
+                      'Collaborative Projects',
+                      'We perform monitoring and business to keep them alive and in track.').myCards(),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

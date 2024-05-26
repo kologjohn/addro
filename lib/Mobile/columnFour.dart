@@ -12,11 +12,11 @@ class MobileCol4 {
            padding: const EdgeInsets.all(8.0),
            child: Container(
              decoration:  BoxDecoration(
-               color: Colors.yellow.withOpacity(0.5),
+               color: Colors.yellow[50],
                borderRadius: const BorderRadius.all(Radius.circular(20))
              ),
              width: 500,
-             height: 400,
+             height: 500,
              child: Column(
                mainAxisAlignment: MainAxisAlignment.center,
                children: [
@@ -82,11 +82,10 @@ class MobileCol4 {
        SizedBox(
          height: 80,
          child: PrettyWaveButton(
-           duration: const Duration(seconds:2),
            waveLength: 10,
            borderRadius: s250,
-           backgroundColor: Colors.black,
-             child: Icon (icon, color: Colors.white, ),
+           backgroundColor: Colors.blueGrey,
+             child: Icon (icon, color: Colors.amber, ),
              onPressed: (){}
          ),
        ),
@@ -99,31 +98,32 @@ class MobileCol4 {
 class MobileConForm{
 
   contactForm (String hintText, TextInputType keyboardType){
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: TextFormField(
-        keyboardType: keyboardType,
-        decoration: InputDecoration(
-          hintText: hintText,
-          border: const OutlineInputBorder()
+    return Container(
+      color: Colors.white,
+      width: 200,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextFormField(
+          keyboardType: keyboardType,
+          decoration: InputDecoration(
+            hintText: hintText,
+            border: const OutlineInputBorder()
+          ),
         ),
       ),
     );
   }
   myMsgBox(String hintText, TextInputType keyboardType, TextInputAction textInputAction){
-    return SizedBox(
-      //color: Colors.white,
-     // width: 200,
-      height: 180,
+    return Container(
+      color: Colors.white,
+      width: 200,
+      height: 200,
       child: TextFormField(
         maxLines: null,
         keyboardType: keyboardType,
         textInputAction: TextInputAction.newline,
         decoration: InputDecoration(
-          fillColor: Colors.white,
-          border: const OutlineInputBorder(
-           // borderSide: BorderSide(color: Colors.red, width: 10)
-          ),
+          border: const OutlineInputBorder(),
           hintText: hintText,
         ),
       ),

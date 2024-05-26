@@ -13,6 +13,7 @@ class MobileHistory extends StatelessWidget {
           child: Column(
             children: <Widget>[
               const SizedBox(height: 100),
+              MobileCol3().myColumn(),
               const SizedBox(height: 50),
               const MobileHistory().content(
                   'Brief History of ADDRO',

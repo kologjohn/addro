@@ -11,7 +11,7 @@ class MobileCards {
   MobileCards(this.img, this.boldtxt, this.normaltxt);
   Widget myMobileCards(){
     return  SizedBox(
-     // width: 250, height: 500,
+      width: 250, height: 500,
       child: Card(
         color: Colors.white,
         //elevation: 5,
@@ -22,18 +22,14 @@ class MobileCards {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SvgPicture.asset('$img', height: 40, width: 40, color: Colors.yellow[800],),
+              child: SvgPicture.asset('$img', height: 40, width: 40, color: Colors.yellow,),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                      '$boldtxt',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.playfairDisplay(fontWeight: FontWeight.bold, fontSize: 30)
-                  ),
+                  Text('$boldtxt', style: GoogleFonts.playfairDisplay(fontWeight: FontWeight.bold, fontSize: 30)),
                 ],
               ),
             ),
@@ -42,7 +38,7 @@ class MobileCards {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('$normaltxt',textAlign: TextAlign.center, style: GoogleFonts.raleway(fontSize: 20),),
+                  Text('$normaltxt', style: GoogleFonts.raleway(fontSize: 20),),
                 ],
               ),
             ),

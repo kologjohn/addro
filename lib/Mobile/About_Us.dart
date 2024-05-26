@@ -1,5 +1,4 @@
 import 'package:ecommerce/Mobile/Column-three.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,7 +13,8 @@ class MobileHistory extends StatelessWidget {
           child: Column(
             children: <Widget>[
               const SizedBox(height: 100),
-              //const SizedBox(height: 50),
+              MobileCol3().myColumn(),
+              const SizedBox(height: 50),
               const MobileHistory().content(
                   'Brief History of ADDRO',
                   '',
@@ -49,43 +49,37 @@ class MobileHistory extends StatelessWidget {
   }
 
   content( String headingTxt, String boldTxt, String normalText,){
-    return  Column(
-      children: [
-        Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(headingTxt,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.playfairDisplay(
-                      color: CupertinoColors.black, fontSize: 30, fontWeight: FontWeight.bold)
-              ),
-            )
-          ],
-        ),
-        Column(
-          children: [
-            SizedBox(
-              width: 900,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RichText(
-                  text: TextSpan(children: [
-                    TextSpan(
-                        text: boldTxt, style: GoogleFonts.roboto(
-                        fontWeight: FontWeight.bold, fontSize: 16, color: CupertinoColors.black)
-                    ),
-                    TextSpan(text: normalText, style: GoogleFonts.roboto( fontSize: 18, color: CupertinoColors.black))
-                  ]),
+    return  Container(
+      color: Colors.black38,
+      child: Column(
+        children: [
+          Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(headingTxt, style: GoogleFonts.playfairDisplay( fontSize: 30, fontWeight: FontWeight.bold)),
+              )
+            ],
+          ),
+          Column(
+            children: [
+              SizedBox(
+                width: 900,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(text: boldTxt, style: GoogleFonts.roboto( fontWeight: FontWeight.bold, fontSize: 16)),
+                      TextSpan(text: normalText, style: GoogleFonts.roboto( fontSize: 18))
+                    ]),
 
+                  ),
                 ),
               ),
-            ),
-
-            const SizedBox(height: 50)
-          ],
-        ),
-      ],
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
