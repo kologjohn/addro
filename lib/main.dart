@@ -1,47 +1,44 @@
-import 'package:ecommerce/responsive/desktop_scaffold.dart';
-import 'package:ecommerce/responsive/mobile_scaffold.dart';
-import 'package:ecommerce/responsive/responsive_layout.dart';
-import 'package:ecommerce/responsive/tablet_scaffold.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:lottie/lottie.dart';
 
+import 'Responsiveness/responsive_layout.dart';
+import 'Screens/desktopScalffold/home.dart';
+import 'Screens/mobile_tabletScalffold/home.dart';
 
-void main() {
-  runApp(const Addro());
+void main (){
+  runApp(const ADDRO());
 }
-
-class Addro extends StatefulWidget {
-  const Addro({super.key});
+class ADDRO extends StatefulWidget {
+  const ADDRO({super.key});
 
   @override
-  State<Addro> createState() => _AddroState();
+  State<ADDRO> createState() => _ADDROState();
 }
 
-class _AddroState extends State<Addro> {
+class _ADDROState extends State<ADDRO> {
   @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return    const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoadingScreen()
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        body: ResponsiveLayout(mobileScaffold: MobileScaffold(), desktopScaffold: DesktopScaffold())
+      ),
     );
   }
 }
 
-class LoadingScreen extends StatelessWidget {
-  const LoadingScreen({super.key});
+
+class Dividers extends StatelessWidget {
+  final Color newColor;
+  const Dividers({super.key, required this.newColor});
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedSplashScreen(
-        splash: Lottie.asset(
-          'assets/loading2.json', height: 700, width: 700,
-          options: LottieOptions(
-            enableApplyingOpacityToLayers: true,
-            enableMergePaths: true
-          )
-        ),
-        nextScreen: const ResponsiveLayout(mobilescaffold: MobileScaffold(),tabletscaffold: TabletScaffold(),desktopscaffold: DesktopScaffold(),),
+    return  Divider(
+      thickness: 0.2,
+      indent: 5,
+      endIndent: 5,
+      color: newColor,
     );
   }
 }
